@@ -105,7 +105,7 @@ const Home = () => {
             >
               {/*Copy  button */}
               <button
-                className={`flex justify-center items-center text-white  transition-all duration-300 ease-in-out group`}
+                className={`flex justify-center items-center text-white bg-[#27272A]  transition-all duration-300 ease-in-out group`}
                 onClick={() => {
                   navigator.clipboard.writeText(value);
                   toast.success("Copied to Clipboard", {
