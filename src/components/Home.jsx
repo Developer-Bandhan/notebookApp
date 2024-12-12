@@ -65,18 +65,20 @@ const Home = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             // Dynamic width based on whether pasteId is present
-            className={`${
-              pasteId ? "w-[80%]" : "w-[85%]"
-            } text-white border border-input bg-zinc-700 border-none rounded-md p-2`}
+            className={`${pasteId ? "w-[80%]" : "w-[85%]"
+              } text-white border border-input bg-zinc-700 border-none rounded-md p-2`}
           />
           <button
             className="text-white bg-blue-700 hover:bg-blue-800 mt-2 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
             onClick={createPaste}
           >
-            {pasteId ? "Update" : "Save your Notes"}
+            <span className="hidden lg:block">{pasteId ? "Update" : "Save your Notes"}</span>
+            <span className="lg:hidden">{pasteId ? "Update" : "Save"}</span>
           </button>
 
-        {pasteId &&  <button
+
+
+          {pasteId && <button
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
             onClick={resetPaste}
           >
